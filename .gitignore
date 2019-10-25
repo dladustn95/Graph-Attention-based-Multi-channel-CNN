@@ -1,0 +1,11 @@
+*.pickle
+*.pth
+__pycache__/
+wn_test
+screenlog.0
+checkpoints/
+data/
+.idea/
+.ipynb_checkpoints/
+runs/
+.empty
