@@ -193,7 +193,7 @@ class SpKBGATConvOnly(nn.Module):
         self.final_relation_embeddings = nn.Parameter(
             torch.randn(self.num_relation, self.entity_out_dim_1 * self.nheads_GAT_1))
 
-        self.convKB = ConvKB(self.entity_out_dim_1 * self.nheads_GAT_1, 3, 1,
+        self.convKB = ConvKB(self.entity_out_dim_1 * self.nheads_GAT_1, 2, 3,
                              self.conv_out_channels, self.drop_conv, self.alpha_conv)
 
     def forward(self, Corpus_, adj, batch_inputs):

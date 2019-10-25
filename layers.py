@@ -14,10 +14,10 @@ class ConvKB(nn.Module):
         super().__init__()
 
         self.conv_layer = nn.Conv2d(
-            3, out_channels, (4, 2))  # kernel size -> 1*input_seq_length(i.e. 2)
+            in_channels, out_channels, (3, input_seq_len))  # kernel size -> 3*input_seq_length(i.e. 2)
         self.dropout = nn.Dropout(drop_prob)
         self.non_linearity = nn.ReLU()
-        self.fc_layer = nn.Linear((input_dim-3) * out_channels, 1)
+        self.fc_layer = nn.Linear((input_dim-2) * out_channels, 1)
 
         nn.init.xavier_uniform_(self.fc_layer.weight, gain=1.414)
         nn.init.xavier_uniform_(self.conv_layer.weight, gain=1.414)
